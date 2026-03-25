@@ -92,7 +92,7 @@ class Article(models.Model):
 
 class Newsletter(models.Model):
     """
-    Displays details of newsletter.
+    Newsletter details displayed.
     """
     title = models.CharField(max_length=255)
     description = models.TextField()
