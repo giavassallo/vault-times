@@ -47,9 +47,54 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### 4. Database Setup (Maria / MySQL)
+This project uses **MariaDB/MySQL**.
+
+Install MariaDB:
+```bash
+Download from:
+https://mariadb.org/download/
+```
+
+Create Databsse:
+```bash
+mysql -u root -p
+```
+Run:
+```sql
+CREATE DATABASE newsapp_db;
+```
+
+Install MySQL Driver:
+```bash
+pip install mysqlclient
+```
+
+Configure Database:
+Open:
+
+```
+news_project/settings.py
+```
+
+Ensure your database config looks like:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'newsapp_db',
+        'USER': 'root',
+        'PASSWORD': 'zg090521',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+
 ---
 
-### 4. Apply Migrations
+### 5. Apply Migrations
 
 ```bash
 python manage.py migrate
@@ -57,7 +102,7 @@ python manage.py migrate
 
 ---
 
-### 5. Run the Server
+### 6. Run the Server
 
 ```bash
 python manage.py runserver
